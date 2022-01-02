@@ -5,7 +5,9 @@ const TaskForm = () => {
   const { addTask, clearList, editTask, editItem } = useContext(TaskListContext)
   const [title, setTitle] = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
+    // our submit btn set the task title when submitted and genrate an id for using uuid
+    // the title value clears from the input box as wel on submission
     e.preventDefault()
     if (!editItem) {
       addTask(title)
@@ -15,11 +17,16 @@ const TaskForm = () => {
     }
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setTitle(e.target.value)
   }
 
   useEffect(() => {
+    // this right here we use the useEffect life cycle update
+    // to set what control form value displays on the input box
+    // if editItem has value/or if edit button is clicked then display the
+    // editItem.title in d input box as value of the input or an empty string when not clicked(edit btn)
+    // note: the edit btn send both the editItem title and id
     if (editItem) {
       setTitle(editItem.title)
       console.log(editItem)
