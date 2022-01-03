@@ -10,12 +10,14 @@ const TaskForm = () => {
     // the title value clears from the input box as wel on submission
     e.preventDefault()
     if (!editItem) {
+//       addtask() collect the title for update tasks array
 //       we need the add task to pass the inputted title
 //       and then setTask() accept
       addTask(title)
       setTitle('')
     } else {
       editTask(title, editItem.id)
+//       editTask() needs te title to update the tasks array
 //  editItem.title can be change to the new title inputed but the editItem.id remains the same
 //       and then push the change to the setTask() object
     }
