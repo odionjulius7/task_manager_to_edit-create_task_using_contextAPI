@@ -14,6 +14,8 @@ const TaskForm = () => {
       setTitle('')
     } else {
       editTask(title, editItem.id)
+//  editItem.title can be change to the new title inputed but the editItem.id remains the same
+//       and then push the change to the setTask() object
     }
   }
 
