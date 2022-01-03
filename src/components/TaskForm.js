@@ -10,6 +10,8 @@ const TaskForm = () => {
     // the title value clears from the input box as wel on submission
     e.preventDefault()
     if (!editItem) {
+//       we need the add task to pass the inputted title
+//       and then setTask() accept
       addTask(title)
       setTitle('')
     } else {
