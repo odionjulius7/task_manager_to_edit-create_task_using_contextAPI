@@ -59,6 +59,10 @@ const TaskListContextProvider = (props) => {
       // if yes then return the editedItm that findItem() pushed to the input box
       // else return the current task instead
       task.id === id ? { title, id } : task
+                               
+       // or still return all the ...tasks and including the newly updated item or return the previous task
+      // when the ids doesn't match
+      // task.id === id ? [...tasks, {title, id}] : task;
     )
 
     console.log(newTasks)
